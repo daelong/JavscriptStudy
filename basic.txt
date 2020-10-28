@@ -1,0 +1,61 @@
+async vs defer
+
+script를 헤드에 포함하면 속도면에서 비효율적임
+script를 바디끝에 포함하면 사용자가 페이지를 빨리 볼 수는 있지만 사이트가 자바스크립트에 의존적이라면 렉이 많이 걸림
+
+head + async js파일 fetching을 병렬로 받고 다 받아지면 실행함
+fetching시간을 절약할수 있음 근데 불편함
+여러개의 js파일을 받아야하면 먼저 다운로드 된 파일부터 실행하게됨
+
+head + defer : js파일을 다운로드 받고 html파싱 끝나면 js를 실행함
+여러개 js파일 다운 받으면 나중에 순서대로 실행함
+
+바닐라js를 쓸때면 맨 앞에 'use strict';를 쓰고 가는게 좋음
+이걸 선언하면 정의하지 않은거 잡아냄
+좀더 단단하게 코딩이 가능함
+
+variable(변수) : 
+let( added in ES6 ) : var말고 이거 쓰자 var hoisting(어디에 선언했든 상관없이 항상 제일위로 선언을 끌어 올리는것), var는 block scope이 없음 즉 무조건 글로벌하게 된다는것
+
+
+block scope : 코드를 블럭안에 작성하면 블럭 밖에서 블럭 안에 코드를 못봄
+박스를 사용하지 않고 밖에 쓰면 global 변수라고 하여 밖에서 볼 수 있음, 최소한으로 쓰는게 좋음
+
+
+const(read, 읽기만 가능) : 한번 할당하면 값이 변하지 않음, 상수
+이걸 많이 쓰는 이유 : 보안상의 이유, thread safety -> 다양한 스레드가 동시에 변수에 접근해서 값을 변경할 수 있음 그거 방지, reduce human mistakes -> 다른 개발자가 변경하는거 방지
+
+variable types(read, write, 읽고 쓰기 가능) : primitive type(number, string, boolean, null, undefied, symbol) vs object type(single아이템을 여러개 묶어서 박스로 관리) => 두개가 다른 방식으로 저장됨 
+primitive는 바로 저장한데 object는 reference로 저장 즉 포인터로 저장
+primitive, frozen object => Immutable data types, all objects, 배열 => Mutable data types
+function ( 다른 데이터 타입처럼 변수에 할당 가능, 인자로 전달 가능, 함수의 return타입으로 return도 가능 -> first-class function) 
+
+let으로 그냥 설정하면 알아서 타입이 정해짐
+
+숫자 마지막에 n만 넣으면 bigint로 됨(크롬, 파이어폭스에서만 지원)
+
+
+string : 한글자든 여러 글자든 다 string타입으로 할당됨, +로 붙일수도 있음
+` `로 원하는 string을 쓰면 변수의 값이 자동으로 붙여져서 나옴
+
+boolean : 
+false, null, undefined, NaN, ''
+true
+
+null : 내가 명확하게 empty값이야라고 지정해준것
+undefined : 선언은 되었지만 값이 정해지지 않음. empty인것도 정해지지 않음
+
+symbol : 고유한 식별자를 만들때 사용됨
+const symbol1 = Symbol('id);
+const symbol2 = Symbol('id);
+이러면 둘은 서로 다른것
+const symbol1 = Symbol.for('id);
+const symbol1 = Symbol.for('id);
+이러면 둘은 같은것
+symbol은 symbol1.description을 사용해서 string으로 변환해줘야함
+
+dynamic typing: 선언하는데로 타입이 정해지는것
+-> 이것땜에 typescript가 나옴
+
+
+연산자 : operator, if, for loop
