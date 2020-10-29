@@ -134,8 +134,8 @@ const simplePrint = function () {
   console.log("simplePrint");
 };
 
-const simplePrint = () => console.log("simplePrint");
-const add = (a, b) => a + b;
+//const simplePrint = () => console.log("simplePrint");
+//const add = (a, b) => a + b;
 const add = (a, b) => {
   //do something more
   return a + b;

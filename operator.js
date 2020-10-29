@@ -58,7 +58,7 @@ console.log(stringFive !== numberFive); //true
 const ellie1 = { name: 'ellie'};
 const ellie2 = { name: 'ellie'};
 const ellie3 = ellie1;
-console.log(ellie1 == ellie2); //flase
+console.log(ellie1 == ellie2); //false
 console.log(ellie1 === ellie2); //false
 console.log(ellie1 === ellie3); //true
 
