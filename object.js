@@ -40,10 +40,10 @@ function printValue(obj, key) {
 printValue(ellie, "name");
 
 // 3. Property value shorthand
-const person1 = { name: "bob", age: 2 };
+const person1 = { name: "bob", age: 2 }; //'object literal' syntax
 const person2 = { name: "steve", age: 3 };
 const person3 = { name: "dave", age: 4 };
-const person4 = new Person("ellie", 30);
+const person4 = new Person("ellie", 30); //'object constructor' syntax
 console.log(person4);
 
 // 4. Constructor function
@@ -65,9 +65,9 @@ console.log(ellie.random);
 
 // 6. for..in vs for..of
 // for (key in obj)
-console.clear();
+// console.clear();
 for (key in ellie) {
-  // object인 ellie가 가진  key들이 블럭을 돌때마다 key라는 지역변수에 할당됨
+  // object인 ellie가 가진 key들이 블럭을 돌때마다 key라는 지역변수에 할당됨
   console.log(key); //이러면 ellie안에 있는 key들이 다 나옴
 }
 
@@ -94,7 +94,7 @@ const user3 = {};
 for (key in user) {
   user3[key] = user[key];
 }
-console.clear();
+// console.clear();
 console.log(user3);
 user3.name = "hi";
 console.log(user);
@@ -102,7 +102,7 @@ console.log(user3);
 
 // const user4 = {};
 // Object.assign(user4, user);
-const user4 = Object.assign({}, user);
+const user4 = Object.assign({ location: "cafe" }, user);
 console.log(user4);
 
 //another example

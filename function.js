@@ -7,7 +7,7 @@
 //function name(param1, param2){ body... return; }
 // one function === one thing
 // naming: doSomething, command, verb
-// e.g. createCardAndPoint -> createCar, createPoint
+// e.g. createCardAndPoint -> createCard, createPoint
 // function is object in FS => 변수에 할당, 파라미터로 전달, 함수 리턴
 
 function printHello() {
@@ -35,6 +35,7 @@ function showMessage(message, from = "unknown") {
   console.log(`${message} by ${from}`);
 }
 showMessage("Hi!");
+showMessage("Hi!", "daehyun");
 
 // 4. Rest parameters(add in ES6)
 function printAll(...args) {
@@ -58,10 +59,13 @@ function printMessage() {
   console.log(globalMessage);
   function printAnother() {
     console.log(message); // posible
-    let childMessage = "hello";
+    let childMessage = "hello child";
+    console.log(childMessage);
   }
+  printAnother();
 }
 printMessage();
+// printAnother();
 
 //6. Return a value
 function sum(a, b) {
@@ -96,6 +100,7 @@ function upgradeUser(user) {
 // a function declaration can be called earlier than it is defined.(hoisted)
 // a function expression is created when the execution reaches it.
 const print = function () {
+  // can be assigned as a value to variable
   //anonymous function
   console.log("print");
 };
@@ -107,6 +112,7 @@ console.log(sumAgain(1, 3));
 
 // 2. Callback function using function expression
 function randomQuiz(answer, printYes, printNo) {
+  // can be passed as an argument to other functions.
   if (answer === "love you") {
     printYes();
   } else {
@@ -130,16 +136,16 @@ randomQuiz("love you", printYes, printNo);
 
 // Arrow function
 // always anonymous
-const simplePrint = function () {
-  console.log("simplePrint");
-};
+// const simplePrint = function () {
+//   console.log("simplePrint");
+// };
 
-//const simplePrint = () => console.log("simplePrint");
-//const add = (a, b) => a + b;
-const add = (a, b) => {
-  //do something more
-  return a + b;
-};
+const simplePrint = () => console.log("simplePrint");
+const add = (a, b) => a + b;
+// const add = (a, b) => {
+//   //do something more
+//   return a + b;
+// };
 
 //IIFE: Immediately Invoked Function Expression
 (function hello() {

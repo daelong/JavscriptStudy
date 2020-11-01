@@ -54,7 +54,7 @@ console.log(user1.age);
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 class Experiment {
-  //constructor를 쓰지않고 바로 정의하면 public #을 붙이면 private로 됨 but아직 최신 브라우저에서 지원안함 babel써야함
+  //constructor를 쓰지않고 바로 정의하면 public,  #을 붙이면 private로 됨 but아직 최신 브라우저에서 지원안함 babel써야함
   publicField = 2;
   #privateField = 0;
 }

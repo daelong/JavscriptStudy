@@ -61,7 +61,7 @@ console.log(newFruits);
 
 // 5. Searching
 // find the index
-console.clear();
+// console.clear();
 console.log(fruits);
 //indexOf
 console.log(fruits.indexOf("사과"));
@@ -73,7 +73,7 @@ console.log(fruits.includes("수박"));
 console.log(fruits.includes("코코넛"));
 
 // lastIndexOf
-console.clear();
+// console.clear();
 fruits.push("사과");
 console.log(fruits);
 console.log(fruits.indexOf("사과")); // indexOf는 조건에 제일 처음것을 반환
