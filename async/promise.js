@@ -57,7 +57,8 @@ const getHen = () =>
   });
 const getEgg = (prev) =>
   new Promise((resolve, reject) => {
-    setTimeout(() => reject(new Error(`${prev} => 달걀`)), 1000);
+    // setTimeout(() => reject(new Error(`${prev} => 달걀`)), 1000);
+    setTimeout(() => resolve(`${prev} => 달걀`), 1000);
   });
 const cook = (prev) =>
   new Promise((resolve, reject) => {

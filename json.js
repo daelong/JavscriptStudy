@@ -24,7 +24,7 @@ json = JSON.stringify(rabbit); //class => json
 console.log(json);
 
 json = JSON.stringify(rabbit, ["name", "color"]); // 뒤에 ,를 붙이면 replacer가 있음 함수형으로 전달해도 되고 배열형태로 전달해도됨
-//원하느 ㄴproperty만 골라서 json으로 변환가능
+//원하는 property만 골라서 json으로 변환가능
 console.log(json);
 
 json = JSON.stringify(rabbit, (key, value) => {

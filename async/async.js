@@ -24,7 +24,7 @@ async function fetchUser() {
 }
 
 const user = fetchUser();
-user.then(console.log);
+user.then(console.log("finish"));
 console.log(user);
 
 // 2. await

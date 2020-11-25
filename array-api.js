@@ -44,7 +44,7 @@ const students = [
   new Student("D", 40, false, 66),
   new Student("E", 18, true, 88),
 ];
-
+console.log(students);
 // Q5. find a student with the score 90
 {
   const result = students.find((student) => student.score === 90); //배열의 각각에 접근하는걸 student로 접근하고 각각의 score중 90점인 것을 리턴
@@ -75,7 +75,7 @@ const students = [
 
 // Q9. compute student's average score
 {
-  const result = students.reduce((prev, curr) => prev + curr.score, 0); //reduce는 배열 하나하나를 돌면서 값을 누적할때 사용하는 것, 즉, 하나하나 돌면서 previous랑 current로 전체 배열을 하나씩 탐색함 previous는 이전에 return 했던 값이다. current은 배열에 다음차례 ,0은 0부터 시작
+  const result = students.reduce((prev, curr) => prev + curr.score, 0); //reduce는 배열 하나하나를 돌면서 값을 누적할때 사용하는 것, 즉, 하나하나 돌면서 previous랑 current로 전체 배열을 하나씩 탐색함 previous는 이전에 return 했던 값이다. current은 배열에 다음차례 ,0은 prev의 첫번째 값으로 0부터 배열 전체를 돎
   console.log(result / students.length);
   //reduceRight는 기능은 같은 순서가 역순 맨 마지막부터 시작
 }
